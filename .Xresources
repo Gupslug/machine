@@ -1,0 +1,54 @@
+
+background: #2a1349
+foreground: #22967f
+
+
+URxvt.font:        xft:bitstream vera sans mono:size=18:antialias=true
+URxvt.boldfont:        xft:bitstream vera sans mono:size=18:antialias=true
+
+
+
+URxvt*background: #2a1349
+URxvt*foreground: #22967f
+
+*.font: xft:Overpass Mono:size=10
+
+Xft.dpi:                        96
+Xft.antialias:                  1
+Xft.autohint:                   1
+Xft.hinting:                    1
+Xft.hintstyle:                  hintslight
+Xft.lcdfilter:                  lcdlight
+Xft.rgba:                       rgb
+
+URxvt*termName:                 rxvt-256color
+URxvt.depth:                    32
+URxvt*lineSpace:                1
+URxvt.letterSpace:              -1
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 65x17
+URxvt.scrollBar:                false
+URxvt*loginShell:               true
+URxvt.internalBorder:           25
+URxvt.perl-ext:	 		default,matcher
+URxvt.url-launcher:             Vivaldi-stable
+URxvt.matcher.button: 		1
+
+*color0:  #ffc1f5 // text1
+*color1:  #22967f
+*color2:  #aaa029
+*color3:  #dd5c11
+*color4:  #93dd11
+*color5:  #ff89cc
+*color6:  #d16e4d // coral
+*color7:  #ba3d6d //bg2
+*color8:  #29093d
+*color9:  #1150a3
+*color10: #11a0a3
+*color11: #104f28
+*color12: #4f10a
+*color13: #36af9f
+*color14: #9b2566
+*color15: #65bcb1
+
