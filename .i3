@@ -1,14 +1,14 @@
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 18
+    font pango:monospace 18
     position bottom
-    status_command /usr/bin/i3status-rs ~/.config/i3/config.toml
+    status_command /usr/bin/i3status-rs ~/.config/i3/status.toml
     colors {
-        separator #3596ba
+	separator #3596ba
         background #350b68
         statusline #3596ba
         focused_workspace ##2ac984 ##2ac984 ##2ac984
         active_workspace #2ac984 #2ac984 #c9bc2a
-        inactive_workspace #2da871 #2da871 #2ac984 
+        inactive_workspace #2da871 #2da871 #2ac984
         urgent_workspace #d8942d #2ac984 #c9bc2a
     }
 }
@@ -57,7 +57,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -fn 'Overpass Mono:pixelsize=18' -l 3 -nf '#707880' -sf '#cc6666' -nb '#1d1f21' -sb '#1d1f21'
+bindsym $mod+d exec rofi -show run -fn 'Overpass Mono:pixelsize=18' -l 3 -nf '#707880' -sf '#cc6666' -nb '#1d1f21' -sb '#1d1f21'
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -109,9 +109,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
+bindsym $mod+a focus parent# focus the child container
 #bindsym $mod+d focus child
 
 
@@ -167,24 +165,24 @@ bindsym $mod+Shift+e exec exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+       	# Pressing left will shrink the window’s width.
+       	# Pressing right will grow the window’s width.
+       	# Pressing up will shrink the window’s height.
+       	# Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
+       	# same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+       	# back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -208,7 +206,7 @@ exec_always compton -f
 
  exec /usr/bin/spotify
 
- exec /usr/bin/urxvt		
+ exec /usr/bin/urxvt
 
 exec /usr/bin/vivaldi-stable
 
@@ -223,11 +221,6 @@ set $focused_border #6b7a19
 # class                 border  backgr. text    indicator child_border
 client.focused          #6b7a19  #6b7a19 #6b7a19 #6b7a19   $focused_border
 client.focused_inactive #2a1349 #2a1349 #2a1349 #2a1349  $focused_border
-client.unfocused        #2a1349 #2a1349 #2a1349 #2a1349   $unfocused_border
-client.urgent           #2a1349 #2a1349 #2a1349 #2a1349   $focused_border
-client.placeholder      #2a1349 #2a1349 #2a1349 #2a1349   #2a1349
-
-client.background       #2a1349
 
 # Apply .Xresource. As far as I know, only needed here if using starx (dont have a login manager)
 exec_always --no-startup-id xrdb ~/.Xresources
@@ -244,77 +237,77 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 #bindsym XF86AudioNext exec playerctl next
 #bindsym XF86AudioPrev exec playerctl previous
 
-#bindsym XF86PowerOff		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
-bindsym XF86Copy		exec
-##bindsym XF86Open		exec
-bindsym XF86Paste		exec
-bindsym XF86Cut		exec
-##bindsym XF86MenuKB		exec
-#bindsym XF86Calculator		exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
-##bindsym XF86Sleep		This binding is typically mapped by systemd automatically.
-##bindsym XF86WakeUp		exec
-#bindsym XF86Explorer		exec $term -e $FILE
-##bindsym XF86Send		exec
-##bindsym XF86Xfer		exec
-#bindsym XF86WWW			exec --no-startup-id $BROWSER
-##bindsym XF86DOS		exec
-#bindsym XF86ScreenSaver		exec exec --no-startup-id lockscreen
-##bindsym XF86RotateWindows	exec
-##bindsym XF86TaskPane		exec
-##bindsym XF86Favorites		exec
-#bindsym XF86MyComputer		exec $term -e $FILE
-##bindsym XF86Back		exec
-##bindsym XF86Forward		exec
-#bindsym XF86Eject		exec --no-startup-id dmenuumount
-#bindsym XF86AudioNext		exec --no-startup-id lmc next
-#bindsym XF86AudioPlay		exec --no-startup-id lmc toggle
-#bindsym XF86AudioPrev		exec --no-startup-id lmc prev
-#bindsym XF86AudioStop		exec --no-startup-id lmc toggle
+#bindsym XF86PowerOff           exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
+bindsym	XF86Copy                exec
+##bindsym XF86Open              exec
+bindsym XF86Paste               exec
+bindsym XF86Cut         exec
+##bindsym XF86MenuKB            exec
+#bindsym XF86Calculator         exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
+##bindsym XF86Sleep             This binding is typically mapped by systemd automatically.
+##bindsym XF86WakeUp            exec
+#bindsym XF86Explorer           exec $term -e $FILE
+##bindsym XF86Send              exec
+##bindsym XF86Xfer              exec
+#bindsym XF86WWW                        exec --no-startup-id $BROWSER
+##bindsym XF86DOS               exec
+#bindsym XF86ScreenSaver                exec exec --no-startup-id lockscreen
+##bindsym XF86RotateWindows     exec
+##bindsym XF86TaskPane          exec
+##bindsym XF86Favorites         exec
+#bindsym XF86MyComputer         exec $term -e $FILE
+##bindsym XF86Back              exec
+##bindsym XF86Forward           exec
+#bindsym XF86Eject              exec --no-startup-id dmenuumount
+#bindsym XF86AudioNext          exec --no-startup-id lmc next
+#bindsym XF86AudioPlay          exec --no-startup-id lmc toggle
+#bindsym XF86AudioPrev          exec --no-startup-id lmc prev
+#bindsym XF86AudioStop          exec --no-startup-id lmc toggle
 ##bindsym XF86AudioRecord
-#bindsym XF86AudioRewind		exec --no-startup-id lmc back 10
-#bindsym XF86AudioForward	exec --no-startup-id lmc forward 10
-##bindsym XF86Phone		exec
-##bindsym XF86Tools		exec
-#bindsym XF86HomePage		exec $BROWSER https://lukesmith.xyz
-#bindsym XF86Reload		restart
-##bindsym XF86ScrollUp		exec
-##bindsym XF86ScrollDown		exec
-##bindsym XF86New		exec
-##bindsym XF86LaunchA		exec
-##bindsym XF86LaunchB		exec
-##bindsym XF86Launch2		exec
-##bindsym XF86Launch3		exec
-##bindsym XF86Launch4		exec
-##bindsym XF86Launch5		exec
-##bindsym XF86Launch6		exec
-##bindsym XF86Launch7		exec
-##bindsym XF86Launch8		exec
-##bindsym XF86Launch9		exec
-#bindsym XF86AudioMicMute	exec $micmute
-#bindsym XF86TouchpadToggle	exec --no-startup-id toggletouchpad
-#bindsym XF86TouchpadOn		exec --no-startup-id synclient TouchpadOff=0
-#bindsym XF86TouchpadOff		exec --no-startup-id synclient TouchpadOff=1
-#bindsym XF86Suspend		exec --no-startup-id lockscreen
-#bindsym XF86Close		kill
-#bindsym XF86WebCam		exec --no-startup-id camtoggle
-#bindsym XF86Mail		exec $term -e neomutt && pkill -RTMIN+12 i3blocks
-#bindsym XF86Messenger		exec $term -e weechat
-#bindsym XF86Search		exec $BROWSER https://duckduckgo.com
-##bindsym XF86Go			exec
-##bindsym XF86Finance		exec
-##bindsym XF86Game		exec
-#bindsym XF86Shop		exec $BROWSER https://ebay.com
-#bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 15
-#bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 15
-#bindsym XF86AudioMedia		exec --no-startup-id $term -e ncmpcpp
-#bindsym XF86Display		exec --no-startup-id displayselect
-#bindsym XF86KbdLightOnOff	exec
-#bindsym XF86KbdBrightnessDown	exec
-#bindsym XF86KbdBrightnessUp	exec
-##bindsym XF86Reply		exec
-##bindsym XF86MailForward	exec
-##bindsym XF86Save		exec
-#bindsym XF86Documents		exec $term -e $FILE ~/Documents
-##bindsym XF86Battery		exec
-##bindsym XF86Bluetooth		exec
-#bindsym XF86WLAN		exec $netrefresh
+#bindsym XF86AudioRewind                exec --no-startup-id lmc back 10
+#bindsym XF86AudioForward       exec --no-startup-id lmc forward 10
+##bindsym XF86Phone             exec
+##bindsym XF86Tools             exec
+#bindsym XF86HomePage           exec $BROWSER https://lukesmith.xyz
+#bindsym XF86Reload             restart
+##bindsym XF86ScrollUp          exec
+##bindsym XF86ScrollDown                exec
+##bindsym XF86New               exec
+##bindsym XF86LaunchA           exec
+##bindsym XF86LaunchB           exec
+##bindsym XF86Launch2           exec
+##bindsym XF86Launch3           exec
+##bindsym XF86Launch4           exec
+##bindsym XF86Launch5           exec
+##bindsym XF86Launch6           exec
+##bindsym XF86Launch7           exec
+##bindsym XF86Launch8           exec
+##bindsym XF86Launch9           exec
+#bindsym XF86AudioMicMute       exec $micmute
+#bindsym XF86TouchpadToggle     exec --no-startup-id toggletouchpad
+#bindsym XF86TouchpadOn         exec --no-startup-id synclient TouchpadOff=0
+#bindsym XF86TouchpadOff                exec --no-startup-id synclient TouchpadOff=1
+#bindsym XF86Suspend            exec --no-startup-id lockscreen
+#bindsym XF86Close              kill
+#bindsym XF86WebCam             exec --no-startup-id camtoggle
+#bindsym XF86Mail               exec $term -e neomutt && pkill -RTMIN+12 i3blocks
+#bindsym XF86Messenger          exec $term -e weechat
+#bindsym XF86Search             exec $BROWSER https://duckduckgo.com
+##bindsym XF86Go                        exec
+##bindsym XF86Finance           exec
+##bindsym XF86Game              exec
+#bindsym XF86Shop               exec $BROWSER https://ebay.com
+#bindsym XF86MonBrightnessDown  exec --no-startup-id xbacklight -dec 15
+#bindsym XF86MonBrightnessUp    exec --no-startup-id xbacklight -inc 15
+#bindsym XF86AudioMedia         exec --no-startup-id $term -e ncmpcpp
+#bindsym XF86Display            exec --no-startup-id displayselect
+#bindsym XF86KbdLightOnOff      exec
+#bindsym XF86KbdBrightnessDown  exec
+#bindsym XF86KbdBrightnessUp    exec
+##bindsym XF86Reply             exec
+##bindsym XF86MailForward       exec
+##bindsym XF86Save              exec
+#bindsym XF86Documents          exec $term -e $FILE ~/Documents
+##bindsym XF86Battery           exec
+##bindsym XF86Bluetooth         exec
+#bindsym XF86WLAN               exec $netrefresh
